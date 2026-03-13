@@ -11,7 +11,7 @@ import { cn } from "../lib/utils";
  * StarsBackground - A canvas-based twinkling stars background component.
  */
 export const StarsBackground = ({
-    starDensity = 0.00015,
+    starDensity = 0.0002,
     allStarsTwinkle = true,
     twinkleProbability = 0.7,
     minTwinkleSpeed = 0.2,

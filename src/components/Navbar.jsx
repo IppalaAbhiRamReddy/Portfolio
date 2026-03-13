@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { AnimatePresence, motion as Motion } from "framer-motion";
-import { useOnClickOutside } from "usehooks-ts";
 import { cn } from "../lib/utils";
 import portfolioData from "../data/portfolioData";
 
@@ -35,26 +34,16 @@ const transition = { delay: 0.1, type: "spring", bounce: 0, duration: 0.6 };
 
 /**
  * ExpandableTabs Component
- * A reusable tab component that expands the selected tab to show its title.
+ * A reusable tab component that expands on hover or when active.
  */
 const ExpandableTabs = ({
     tabs,
     className,
     activeColor = "text-blue-400",
+    activeTab = 0,
     onChange,
 }) => {
-    const [selected, setSelected] = React.useState(null);
-    const outsideClickRef = React.useRef(null);
-
-    useOnClickOutside(outsideClickRef, () => {
-        setSelected(null);
-        onChange?.(null);
-    });
-
-    const handleSelect = (index) => {
-        setSelected(index);
-        onChange?.(index);
-    };
+    const [hoveredIndex, setHoveredIndex] = React.useState(null);
 
     const Separator = () => (
         <div className="mx-1 h-[24px] w-[1.2px] bg-white/10" aria-hidden="true" />
@@ -62,7 +51,6 @@ const ExpandableTabs = ({
 
     return (
         <div
-            ref={outsideClickRef}
             className={cn(
                 "flex flex-wrap items-center gap-2 rounded-2xl border border-white/10 bg-black/20 backdrop-blur-xl p-1 shadow-2xl",
                 className
@@ -73,6 +61,10 @@ const ExpandableTabs = ({
                     return <Separator key={`separator-${index}`} />;
                 }
 
+                const isActive = activeTab === index;
+                const isHovered = hoveredIndex === index;
+                const isExpanded = isActive || isHovered;
+
                 const Icon = tab.icon;
                 return (
                     <Motion.button
@@ -80,19 +72,21 @@ const ExpandableTabs = ({
                         variants={buttonVariants}
                         initial={false}
                         animate="animate"
-                        custom={selected === index}
-                        onClick={() => handleSelect(index)}
+                        custom={isExpanded}
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                        onClick={() => onChange?.(index)}
                         transition={transition}
                         className={cn(
                             "relative flex items-center rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer",
-                            selected === index
+                            isActive
                                 ? cn("bg-white/10", activeColor)
                                 : "text-white/60 hover:bg-white/5 hover:text-white"
                         )}
                     >
                         <Icon size={20} />
                         <AnimatePresence initial={false}>
-                            {selected === index && (
+                            {isExpanded && (
                                 <Motion.span
                                     variants={spanVariants}
                                     initial="initial"
@@ -116,7 +110,7 @@ const ExpandableTabs = ({
  * Navbar Component
  * The main fixed header for the portfolio.
  */
-const Navbar = ({ onChange }) => {
+const Navbar = ({ activeTab, onChange }) => {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
             <Motion.div
@@ -124,7 +118,11 @@ const Navbar = ({ onChange }) => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <ExpandableTabs tabs={portfolioData.navTabs} onChange={onChange} />
+                <ExpandableTabs 
+                    tabs={portfolioData.navTabs} 
+                    activeTab={activeTab}
+                    onChange={onChange} 
+                />
             </Motion.div>
         </header>
     );
