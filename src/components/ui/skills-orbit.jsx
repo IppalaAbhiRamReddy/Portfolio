@@ -128,13 +128,13 @@ export function SkillsOrbit({ skillsData }) {
                             <div className="flex justify-center items-center mt-6 space-x-4">
                                 <button
                                     onClick={prev}
-                                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors cursor-pointer"
                                 >
                                     <ChevronLeft size={18} className="text-white/70" />
                                 </button>
                                 <button
                                     onClick={next}
-                                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+                                    className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors cursor-pointer"
                                 >
                                     <ChevronRight size={18} className="text-white/70" />
                                 </button>

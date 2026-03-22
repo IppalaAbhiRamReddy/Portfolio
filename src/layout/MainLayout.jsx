@@ -6,6 +6,7 @@ import About from '../components/About';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 const MainLayout = () => {
     const [activeSection, setActiveSection] = useState(0);
@@ -46,7 +47,18 @@ const MainLayout = () => {
             if (el) observer.observe(el);
         });
 
-        return () => observer.disconnect();
+        // Ensure the last section is active when scrolled to the absolute bottom
+        const handleScroll = () => {
+            if ((window.innerHeight + window.scrollY) >= document.documentElement.offsetHeight - 50) {
+                setActiveSection(sections.length - 1);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            observer.disconnect();
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const scrollToSection = (index) => {
@@ -69,13 +81,14 @@ const MainLayout = () => {
                     activeTab={activeSection}
                     onChange={scrollToSection}
                 />
-                <main className="flex flex-col gap-20 pt-24 pb-20">
+                <main className="flex flex-col gap-10 pt-24 pb-0">
                     <Hero />
                     <About />
                     <Skills />
                     <Projects />
                     <Contact />
                 </main>
+                <Footer />
             </div>
         </div>
     );
