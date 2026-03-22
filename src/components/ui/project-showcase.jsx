@@ -141,7 +141,11 @@ export function ProjectShowcase() {
         {projects.map((project, index) => (
           <a
             key={project.title}
-            href={project.live || project.github || "#"}
+            href={
+              project.live && project.live !== "#"
+                ? project.live
+                : project.github || "#"
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="group block"
@@ -177,10 +181,9 @@ export function ProjectShowcase() {
                       className={`
                         w-5 h-5 text-white/40
                         transition-all duration-300 ease-out
-                        ${
-                          hoveredIndex === index
-                            ? "opacity-100 translate-x-0 translate-y-0 text-white"
-                            : "opacity-0 -translate-x-2 translate-y-2"
+                        ${hoveredIndex === index
+                          ? "opacity-100 translate-x-0 translate-y-0 text-white"
+                          : "opacity-0 -translate-x-2 translate-y-2"
                         }
                       `}
                     />
@@ -233,15 +236,6 @@ export function ProjectShowcase() {
                   </ul>
                 </div>
 
-                <span
-                  className={`
-                    text-sm font-mono text-white/30 tabular-nums
-                    transition-all duration-300 ease-out
-                    ${hoveredIndex === index ? "text-white/60" : ""}
-                  `}
-                >
-                  {project.year}
-                </span>
               </div>
             </div>
           </a>

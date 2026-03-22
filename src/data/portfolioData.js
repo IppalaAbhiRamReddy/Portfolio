@@ -1,10 +1,17 @@
 import { Home, User, Code, Briefcase, Mail } from "lucide-react";
 import avatarImg from "../assets/Portfolio.png";
-import vvitImg from "../assets/vvit.png";
+import vvitImg from "../assets/about/vvit.png";
 import placeholderImg from "../assets/placeholder.svg";
-import hobbiesImg from "../assets/hobbies.jpeg";
-import problemImg from "../assets/problem_solving.png";
-import achievementsImg from "../assets/achievements.png";
+import hobbiesImg from "../assets/about/hobbies.jpeg";
+import problemImg from "../assets/about/problem_solving.png";
+import achievementsImg from "../assets/about/achievements.png";
+
+// Project Images
+import finwiseImg from "../assets/projects/finwise.jpeg";
+import healthcareImg from "../assets/projects/health_care.jpeg";
+import typingTestImg from "../assets/projects/typing_speed_test.jpeg";
+import smartAidImg from "../assets/projects/smart_aid.jpeg";
+import skywingsImg from "../assets/projects/skywings.jpeg";
 
 // Local Tech Stack SVGs
 import htmlIcon from "../assets/icons/html.svg";
@@ -73,48 +80,95 @@ const portfolioData = {
   },
   projects: [
     {
-      title: "Portfolio Website",
+      title: "FinWise – AI-Powered Personal Finance Management System",
       description:
-        "A modern developer portfolio website built with React, Tailwind CSS, and Framer Motion.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      features: [
-        "Architected a responsive, dark-themed UI with glassmorphism components",
-        "Implemented smooth scroll animations and dynamic cursor interactions",
-        "Engineered a centralized config system for zero-friction content updates",
+        "A full-stack financial management platform to track expenses, manage budgets, and generate AI-driven spending insights.",
+      technologies: [
+        "React",
+        "Django REST Framework",
+        "PostgreSQL",
+        "JWT",
+        "Tailwind CSS",
       ],
-      github: "#",
+      features: [
+        "Developed secure REST APIs with JWT authentication and role-based access control",
+        "Designed normalized PostgreSQL schema for efficient transaction and budget management",
+        "Built real-time analytics dashboards with AI-driven insights for smarter financial decisions",
+      ],
+      github: "https://github.com/IppalaAbhiRamReddy/finwise",
       live: "#",
-      year: "2024",
-      image: placeholderImg,
+      image: finwiseImg,
     },
     {
-      title: "Task Manager",
-      description: "A productivity app to manage daily tasks and projects.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      features: [
-        "Built a real-time drag-and-drop Kanban board interface",
-        "Engineered secure JWT-based user authentication and session handling",
-        "Designed flexible REST API endpoints for seamless crud operations",
+      title: "Integrated Healthcare Ecosystem Platform",
+      description:
+        "A machine learning-based healthcare system that predicts diseases from symptoms and recommends appropriate treatments.",
+      technologies: [
+        "Python",
+        "Machine Learning",
+        "Django REST Framework",
+        "React",
+        "PostgreSQL",
       ],
-      github: "#",
-      live: "#",
-      year: "2024",
-      image: placeholderImg,
+      features: [
+        "Developed a disease prediction model using 250+ symptoms mapped to 200+ diseases",
+        "Improved model accuracy up to 95% through data preprocessing and feature optimization",
+        "Integrated ML model with backend APIs for real-time prediction and user interaction",
+      ],
+      github: "https://github.com/IppalaAbhiRamReddy/HealthCare-AI",
+      live: "https://health-care-owuayfaxl-ippalaabhiramreddys-projects.vercel.app/",
+      image: healthcareImg,
     },
     {
-      title: "AI Recommendation System",
+      title: "Typing Speed Test Web Application",
       description:
-        "An AI-powered system that provides personalized recommendations.",
-      technologies: ["Python", "TensorFlow", "FastAPI"],
+        "A responsive web application to measure real-time typing speed, accuracy, and performance with interactive feedback.",
+      technologies: ["HTML", "CSS", "JavaScript"],
       features: [
-        "Trained customized Machine Learning models on large user datasets",
-        "Deployed a high-performance Python FastAPI backend architecture",
-        "Built an interactive dashboard for visualizing recommendation metrics",
+        "Implemented real-time WPM and accuracy calculation with character-level validation",
+        "Designed multiple timer modes (15s, 30s, 60s) with auto-start functionality",
+        "Optimized DOM updates and event handling to improve performance by 35%",
       ],
-      github: "#",
+      github: "https://github.com/IppalaAbhiRamReddy/typing_speed_test",
+      live: "https://ippalaabhiramreddy.github.io/typing_speed_test/",
+      image: typingTestImg,
+    },
+    {
+      title: "Smart Aid – Emergency Assistance Application",
+      description:
+        "A mobile safety application providing instant emergency support, first aid guidance, and critical health information access.",
+      technologies: ["Flutter", "Firebase", "Provider", "GoRouter"],
+      features: [
+        "Implemented Emergency SOS system with real-time location sharing and visual alert signaling",
+        "Developed searchable first aid guides with text-to-speech support for accessibility",
+        "Built Medical ID and reminder system for storing health data and managing medication alerts",
+      ],
+      github: "https://github.com/IppalaAbhiRamReddy/smart_aid",
       live: "#",
-      year: "2023",
-      image: placeholderImg,
+      image: smartAidImg,
+    },
+    {
+      title: "Skywings – Travel & Flight Booking Landing Page",
+      description:
+        "A responsive travel website showcasing destinations, tour highlights, and booking-focused sections with interactive animations and testimonials.",
+      technologies: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "ScrollReveal",
+        "Swiper.js",
+        "Remix Icon",
+      ],
+      features: [
+        "Built a responsive multi-section landing page for travel discovery, packages, and contact flows",
+        "Implemented mobile navigation toggle with dynamic menu icon switching",
+        "Added scroll-based reveal animations across key sections using ScrollReveal",
+        "Integrated testimonial carousel with looping multi-slide layout using Swiper.js",
+        "Designed reusable UI components and consistent styling with CSS variables and utility patterns",
+      ],
+      github: "https://github.com/IppalaAbhiRamReddy/Skywings",
+      live: "https://ippalaabhiramreddy.github.io/Skywings/",
+      image: skywingsImg,
     },
   ],
   contact: {
