@@ -1,5 +1,9 @@
 import { Home, User, Code, Briefcase, Mail } from "lucide-react";
 import avatarImg from "../assets/Portfolio.png";
+import vvitImg from "../assets/vvit.png";
+import placeholderImg from "../assets/placeholder.svg";
+import hobbiesImg from "../assets/hobbies.jpeg";
+import problemImg from "../assets/problem_solving.png";
 
 // Local Tech Stack SVGs
 import htmlIcon from "../assets/icons/html.svg";
@@ -21,7 +25,6 @@ import githubIcon from "../assets/icons/github.svg";
 import postmanIcon from "../assets/icons/postman.svg";
 import vercelIcon from "../assets/icons/vercel.svg";
 import renderIcon from "../assets/icons/render.svg";
-import placeholderImg from "../assets/placeholder.svg";
 
 const portfolioData = {
   name: "Abhiram Reddy",
@@ -114,10 +117,56 @@ const portfolioData = {
     },
   ],
   contact: {
-    email: "john@example.com",
-    linkedin: "https://linkedin.com/in/johndeveloper",
-    github: "https://github.com/johndeveloper",
+    email: "abhiramreddyippala@gmail.com",
+    linkedin: "https://www.linkedin.com/in/ippala-abhiram-reddy/",
+    github: "https://github.com/IppalaAbhiRamReddy",
+    leetcode: "https://leetcode.com/u/Abhiram_Reddy_Ippala/",
+    resume: "https://drive.google.com/file/d/1k5MvGoPNr6UJYSd3waCoSXCFtSMv2686/view?usp=sharing",
   },
+  testimonials: [
+    {
+      points: [
+        "B.Tech in CSE (AI & ML) @ VVIT, Guntur",
+        "Academic standing: 8.5 CGPA",
+        "Focus: Backend development, Data Structures, and ML fundamentals"
+      ],
+      name: "Education",
+      designation: "VVIT, Guntur | 2021 - 2025",
+      src: vvitImg,
+    },
+    {
+      points: [
+        "Solved 290+ problems on LeetCode",
+        "Expertise: Arrays, Sliding Window, Binary Search, Trees, Graphs",
+        "Focus on Big-O optimization and regular contest participation"
+      ],
+      name: "Problem Solving",
+      designation: "LeetCode Specialist",
+      src: problemImg,
+    },
+    {
+      points: [
+        "⭐ 5★ SQL Badge on HackerRank",
+        "🏆 NPTEL Elite Certifications (IIT Madras, Kharagpur, Kanpur)",
+        "💻 Built multiple full-stack and AI-based applications",
+        "📈 Strong backend + database optimization skills"
+      ],
+      name: "Achievements",
+      designation: "Certified Developer",
+      src: placeholderImg,
+    },
+    {
+      points: [
+        "Solving coding challenges and exploring new patterns",
+        "Building side projects and experimenting with new technologies",
+        "Learning about AI tools and backend system design",
+        "Staying updated with tech trends and developer tools"
+      ],
+      name: "Hobbies & Interests",
+      designation: "Lifelong Learner",
+      src: hobbiesImg,
+    }
+  ],
 };
 
 export default portfolioData;

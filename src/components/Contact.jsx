@@ -213,7 +213,7 @@ const Contact = () => {
                 description="Frontend Developer & UI/UX Enthusiast"
                 buttonContent={
                   <button
-                    onClick={() => window.open('mailto:abhiram@example.com')}
+                    onClick={() => window.open('mailto:abhiramreddyippala@gmail.com')}
                     className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors text-sm text-foreground font-medium cursor-pointer"
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-muted-foreground">

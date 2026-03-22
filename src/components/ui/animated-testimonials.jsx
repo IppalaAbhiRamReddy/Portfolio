@@ -105,31 +105,52 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-white/50">
               {testimonials[active].designation}
             </p>
-            <motion.p className="text-lg text-white/70 mt-8">
-              {testimonials[active].quote.split(" ").map((word, index) => (
-                <motion.span
-                  key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    duration: 0.2,
-                    ease: "easeInOut",
-                    delay: 0.02 * index,
-                  }}
-                  className="inline-block"
-                >
-                  {word}&nbsp;
-                </motion.span>
-              ))}
-            </motion.p>
+            {testimonials[active].points ? (
+              <ul className="mt-8 space-y-4">
+                {testimonials[active].points.map((point, index) => (
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      delay: 0.1 * index,
+                      ease: "easeOut"
+                    }}
+                    className="flex items-start gap-3 text-lg text-white/70"
+                  >
+                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0" />
+                    <span>{point}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            ) : (
+              <motion.p className="text-lg text-white/70 mt-8">
+                {testimonials[active].quote.split(" ").map((word, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{
+                      filter: "blur(10px)",
+                      opacity: 0,
+                      y: 5,
+                    }}
+                    animate={{
+                      filter: "blur(0px)",
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                      ease: "easeInOut",
+                      delay: 0.02 * index,
+                    }}
+                    className="inline-block"
+                  >
+                    {word}&nbsp;
+                  </motion.span>
+                ))}
+              </motion.p>
+            )}
           </motion.div>
           <div className="flex gap-4 pt-12 md:pt-0">
             <button

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { AnimatedTestimonials } from './ui/animated-testimonials';
-import placeholderImg from '../assets/placeholder.svg';
+import portfolioData from '../data/portfolioData';
 
 function ShimmerText({ children, className, duration = 1.5, delay = 1.5 }) {
   return (
@@ -30,26 +30,7 @@ function ShimmerText({ children, className, duration = 1.5, delay = 1.5 }) {
   )
 }
 
-const mockTestimonials = [
-  {
-    quote: "Abhiram's ability to seamlessly bridge complex backend architecture with stunning frontend interfaces is unmatched. He delivered our platform ahead of schedule with zero major bugs.",
-    name: "Sarah Chen",
-    designation: "Product Manager",
-    src: placeholderImg,
-  },
-  {
-    quote: "Working with Abhiram was a game changer. The APIs he built were lightning fast and perfectly documented. He's incredibly driven and truly fueled by code.",
-    name: "Marcus Rodriguez",
-    designation: "CTO at InnovateCorp",
-    src: placeholderImg,
-  },
-  {
-    quote: "An exceptional full-stack developer. Not only is his code clean and scalable, but his eye for UX/UI design makes the final product feel like a premium experience.",
-    name: "Emily Watson",
-    designation: "Lead Designer at StudioX",
-    src: placeholderImg,
-  }
-];
+
 
 const About = () => {
   return (
@@ -67,7 +48,7 @@ const About = () => {
 
       {/* Animated Testimonials Layout */}
       <div className="w-full mt-10">
-        <AnimatedTestimonials testimonials={mockTestimonials} autoplay={true} />
+        <AnimatedTestimonials testimonials={portfolioData.testimonials} autoplay={false} />
       </div>
     </section>
   );
