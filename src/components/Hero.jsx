@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { StackingNavbar } from './ui/stacking-navbar';
 import avatarImg from '../assets/Portfolio.png';
 
