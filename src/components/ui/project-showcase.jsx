@@ -1,8 +1,36 @@
 "use client"
 
 import React, { useState, useRef, useEffect } from "react"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, CheckCircle2 } from "lucide-react"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
 import portfolioData from "@/data/portfolioData"
+
+function ShimmerText({ children, className, duration = 1.5, delay = 1.5 }) {
+    return (
+        <div className="group overflow-hidden inline">
+            <motion.div
+                className={cn(
+                    "inline-block [--shimmer-contrast:rgba(255,255,255,0.6)] dark:[--shimmer-contrast:rgba(0,0,0,0.5)] text-white",
+                    className
+                )}
+                style={{
+                    WebkitTextFillColor: "transparent",
+                    background: "currentColor linear-gradient(to right, currentColor 0%, var(--shimmer-contrast) 40%, var(--shimmer-contrast) 60%, currentColor 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "50% 200%",
+                }}
+                initial={{ backgroundPositionX: "250%" }}
+                animate={{ backgroundPositionX: ["-100%", "250%"] }}
+                transition={{ duration, delay, repeat: Infinity, repeatDelay: 1.5, ease: "linear" }}
+            >
+                <span>{children}</span>
+            </motion.div>
+        </div>
+    )
+}
 
 export function ProjectShowcase() {
     const projects = portfolioData.projects
@@ -57,7 +85,11 @@ export function ProjectShowcase() {
 
     return (
         <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-4xl mx-auto px-6 py-16">
-            <h2 className="text-white/40 text-sm font-medium tracking-wide uppercase mb-8">Selected Work</h2>
+            <div className="mb-12 flex justify-center w-full">
+                <ShimmerText className="text-white text-2xl md:text-4xl font-extrabold tracking-wider uppercase text-center filter drop-shadow-md">
+                    Selected Work
+                </ShimmerText>
+            </div>
 
             <div
                 className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl"
@@ -88,7 +120,12 @@ export function ProjectShowcase() {
                 </div>
             </div>
 
-            <div className="space-y-0">
+            <div className="space-y-0 max-h-[80vh] overflow-y-auto pr-4 
+                [&::-webkit-scrollbar]:w-2 
+                [&::-webkit-scrollbar-track]:bg-transparent 
+                [&::-webkit-scrollbar-thumb]:bg-white/10 
+                hover:[&::-webkit-scrollbar-thumb]:bg-white/20 
+                [&::-webkit-scrollbar-thumb]:rounded-full">
                 {projects.map((project, index) => (
                     <a
                         key={project.title}
@@ -145,6 +182,43 @@ export function ProjectShowcase() {
                                     >
                                         {project.description}
                                     </p>
+
+                                    {/* Tech Stack Badges */}
+                                    <div className="flex flex-wrap gap-2 mt-4">
+                                        {project.technologies?.map((tech) => (
+                                            <span
+                                                key={tech}
+                                                className={`
+                                                    px-3 py-1 text-xs font-medium rounded-full border backdrop-blur-sm transition-all duration-300
+                                                    ${hoveredIndex === index ? "bg-white/10 border-white/20 text-white/90" : "bg-white/5 border-white/5 text-white/40"}
+                                                `}
+                                            >
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    {/* Feature Bullets */}
+                                    <ul className="mt-4 space-y-2">
+                                        {project.features?.map((feature, i) => (
+                                            <li key={i} className="flex items-start gap-3">
+                                                <CheckCircle2
+                                                    className={`
+                                                        w-4 h-4 mt-0.5 shrink-0 transition-colors duration-300
+                                                        ${hoveredIndex === index ? "text-white/70" : "text-white/20"}
+                                                    `}
+                                                />
+                                                <span
+                                                    className={`
+                                                        text-sm transition-colors duration-300 leading-relaxed max-w-lg
+                                                        ${hoveredIndex === index ? "text-white/70" : "text-white/40"}
+                                                    `}
+                                                >
+                                                    {feature}
+                                                </span>
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
 
                                 <span

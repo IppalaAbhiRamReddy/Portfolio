@@ -54,6 +54,11 @@ const portfolioData = {
       description:
         "A modern developer portfolio website built with React, Tailwind CSS, and Framer Motion.",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
+      features: [
+        "Architected a responsive, dark-themed UI with glassmorphism components",
+        "Implemented smooth scroll animations and dynamic cursor interactions",
+        "Engineered a centralized config system for zero-friction content updates"
+      ],
       github: "#",
       live: "#",
       year: "2024",
@@ -64,6 +69,11 @@ const portfolioData = {
       title: "Task Manager",
       description: "A productivity app to manage daily tasks and projects.",
       technologies: ["React", "Node.js", "MongoDB"],
+      features: [
+        "Built a real-time drag-and-drop Kanban board interface",
+        "Engineered secure JWT-based user authentication and session handling",
+        "Designed flexible REST API endpoints for seamless crud operations"
+      ],
       github: "#",
       live: "#",
       year: "2024",
@@ -75,6 +85,11 @@ const portfolioData = {
       description:
         "An AI-powered system that provides personalized recommendations.",
       technologies: ["Python", "TensorFlow", "FastAPI"],
+      features: [
+        "Trained customized Machine Learning models on large user datasets",
+        "Deployed a high-performance Python FastAPI backend architecture",
+        "Built an interactive dashboard for visualizing recommendation metrics"
+      ],
       github: "#",
       live: "#",
       year: "2023",
