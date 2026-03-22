@@ -1,10 +1,8 @@
-"use client"
-
-import React, { useState, useRef, useEffect } from "react"
-import { ArrowUpRight, CheckCircle2 } from "lucide-react"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
-import portfolioData from "@/data/portfolioData"
+import React, { useState, useRef, useEffect } from "react";
+import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import portfolioData from "@/data/portfolioData";
 
 function ShimmerText({ children, className, duration = 1.5, delay = 1.5 }) {
   return (
@@ -12,11 +10,12 @@ function ShimmerText({ children, className, duration = 1.5, delay = 1.5 }) {
       <motion.div
         className={cn(
           "inline-block [--shimmer-contrast:rgba(255,255,255,0.6)] dark:[--shimmer-contrast:rgba(0,0,0,0.5)] text-white",
-          className
+          className,
         )}
         style={{
           WebkitTextFillColor: "transparent",
-          background: "currentColor linear-gradient(to right, currentColor 0%, var(--shimmer-contrast) 40%, var(--shimmer-contrast) 60%, currentColor 100%)",
+          background:
+            "currentColor linear-gradient(to right, currentColor 0%, var(--shimmer-contrast) 40%, var(--shimmer-contrast) 60%, currentColor 100%)",
           WebkitBackgroundClip: "text",
           backgroundClip: "text",
           backgroundRepeat: "no-repeat",
@@ -24,67 +23,77 @@ function ShimmerText({ children, className, duration = 1.5, delay = 1.5 }) {
         }}
         initial={{ backgroundPositionX: "250%" }}
         animate={{ backgroundPositionX: ["-100%", "250%"] }}
-        transition={{ duration, delay, repeat: Infinity, repeatDelay: 1.5, ease: "linear" }}
+        transition={{
+          duration,
+          delay,
+          repeat: Infinity,
+          repeatDelay: 1.5,
+          ease: "linear",
+        }}
       >
         <span>{children}</span>
       </motion.div>
     </div>
-  )
+  );
 }
 
 export function ProjectShowcase() {
-  const projects = portfolioData.projects
-  const [hoveredIndex, setHoveredIndex] = useState(null)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-  const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 })
-  const [isVisible, setIsVisible] = useState(false)
-  const containerRef = useRef(null)
-  const animationRef = useRef(null)
+  const projects = portfolioData.projects;
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [smoothPosition, setSmoothPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+  const animationRef = useRef(null);
 
   useEffect(() => {
     const lerp = (start, end, factor) => {
-      return start + (end - start) * factor
-    }
+      return start + (end - start) * factor;
+    };
 
     const animate = () => {
       setSmoothPosition((prev) => ({
         x: lerp(prev.x, mousePosition.x, 0.15),
         y: lerp(prev.y, mousePosition.y, 0.15),
-      }))
-      animationRef.current = requestAnimationFrame(animate)
-    }
+      }));
+      animationRef.current = requestAnimationFrame(animate);
+    };
 
-    animationRef.current = requestAnimationFrame(animate)
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
+        cancelAnimationFrame(animationRef.current);
       }
-    }
-  }, [mousePosition])
+    };
+  }, [mousePosition]);
 
   const handleMouseMove = (e) => {
     if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect()
+      const rect = containerRef.current.getBoundingClientRect();
       setMousePosition({
         x: e.clientX - rect.left,
         y: e.clientY - rect.top,
-      })
+      });
     }
-  }
+  };
 
   const handleMouseEnter = (index) => {
-    setHoveredIndex(index)
-    setIsVisible(true)
-  }
+    setHoveredIndex(index);
+    setIsVisible(true);
+  };
 
   const handleMouseLeave = () => {
-    setHoveredIndex(null)
-    setIsVisible(false)
-  }
+    setHoveredIndex(null);
+    setIsVisible(false);
+  };
 
   return (
-    <section ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full max-w-4xl mx-auto px-6 py-16">
+    <section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      className="relative w-full max-w-4xl mx-auto px-6 py-16"
+    >
       <div className="mb-12 flex justify-center w-full">
         <ShimmerText className="text-white text-2xl md:text-4xl font-extrabold tracking-wider uppercase text-center filter drop-shadow-md">
           Selected Work
@@ -99,7 +108,8 @@ export function ProjectShowcase() {
           transform: `translate3d(${smoothPosition.x + 20}px, ${smoothPosition.y - 100}px, 0)`,
           opacity: isVisible ? 1 : 0,
           scale: isVisible ? 1 : 0.8,
-          transition: "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          transition:
+            "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), scale 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
         <div className="relative w-[320px] h-[200px] bg-neutral-900 rounded-xl overflow-hidden border border-white/10">
@@ -120,12 +130,14 @@ export function ProjectShowcase() {
         </div>
       </div>
 
-      <div className="space-y-0 max-h-[80vh] overflow-y-auto pr-4 
+      <div
+        className="space-y-0 max-h-[80vh] overflow-y-auto pr-4 
         [&::-webkit-scrollbar]:w-2 
         [&::-webkit-scrollbar-track]:bg-transparent 
         [&::-webkit-scrollbar-thumb]:bg-white/10 
         hover:[&::-webkit-scrollbar-thumb]:bg-white/20 
-        [&::-webkit-scrollbar-thumb]:rounded-full">
+        [&::-webkit-scrollbar-thumb]:rounded-full"
+      >
         {projects.map((project, index) => (
           <a
             key={project.title}
@@ -165,9 +177,10 @@ export function ProjectShowcase() {
                       className={`
                         w-5 h-5 text-white/40
                         transition-all duration-300 ease-out
-                        ${hoveredIndex === index
-                          ? "opacity-100 translate-x-0 translate-y-0 text-white"
-                          : "opacity-0 -translate-x-2 translate-y-2"
+                        ${
+                          hoveredIndex === index
+                            ? "opacity-100 translate-x-0 translate-y-0 text-white"
+                            : "opacity-0 -translate-x-2 translate-y-2"
                         }
                       `}
                     />
@@ -183,7 +196,6 @@ export function ProjectShowcase() {
                     {project.description}
                   </p>
 
-                  {/* Tech Stack Badges */}
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.technologies?.map((tech) => (
                       <span
@@ -237,5 +249,5 @@ export function ProjectShowcase() {
         <div className="border-t border-white/10" />
       </div>
     </section>
-  )
+  );
 }

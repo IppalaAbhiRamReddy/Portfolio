@@ -1,15 +1,6 @@
-"use client";
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-} from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { cn } from "../lib/utils";
 
-/**
- * StarsBackground - A canvas-based twinkling stars background component.
- */
 export const StarsBackground = ({
   starDensity = 0.0002,
   allStarsTwinkle = true,
@@ -35,7 +26,7 @@ export const StarsBackground = ({
           opacity: Math.random() * 0.7 + 0.3,
           twinkleSpeed: shouldTwinkle
             ? minTwinkleSpeed +
-            Math.random() * (maxTwinkleSpeed - minTwinkleSpeed)
+              Math.random() * (maxTwinkleSpeed - minTwinkleSpeed)
             : null,
         };
       });
@@ -46,7 +37,7 @@ export const StarsBackground = ({
       twinkleProbability,
       minTwinkleSpeed,
       maxTwinkleSpeed,
-    ]
+    ],
   );
 
   useEffect(() => {
