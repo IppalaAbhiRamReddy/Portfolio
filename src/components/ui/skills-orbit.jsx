@@ -3,10 +3,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import placeholderImg from "../../assets/placeholder.svg";
 
 const safeImage = (e) => {
   const target = e.target;
-  target.src = "https://placehold.co/100x100/1e1e1e/white?text=Skill";
+  target.src = placeholderImg;
 };
 
 const useResponsive = () => {

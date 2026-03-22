@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { AnimatedTestimonials } from './ui/animated-testimonials';
+import placeholderImg from '../assets/placeholder.svg';
 
 function ShimmerText({ children, className, duration = 1.5, delay = 1.5 }) {
   return (
@@ -34,19 +35,19 @@ const mockTestimonials = [
     quote: "Abhiram's ability to seamlessly bridge complex backend architecture with stunning frontend interfaces is unmatched. He delivered our platform ahead of schedule with zero major bugs.",
     name: "Sarah Chen",
     designation: "Product Manager",
-    src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: placeholderImg,
   },
   {
     quote: "Working with Abhiram was a game changer. The APIs he built were lightning fast and perfectly documented. He's incredibly driven and truly fueled by code.",
     name: "Marcus Rodriguez",
     designation: "CTO at InnovateCorp",
-    src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: placeholderImg,
   },
   {
     quote: "An exceptional full-stack developer. Not only is his code clean and scalable, but his eye for UX/UI design makes the final product feel like a premium experience.",
     name: "Emily Watson",
     designation: "Lead Designer at StudioX",
-    src: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=3461&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    src: placeholderImg,
   }
 ];
 

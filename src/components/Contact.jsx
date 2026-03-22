@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
+import avatarImg from "../assets/Portfolio.png";
 
 // ==========================================
 // 1. INVERTED CURSOR COMPONENT
@@ -206,7 +207,7 @@ const Contact = () => {
               onMouseLeave={() => setIsHovered(false)}
             >
               <AvatarHoverCard
-                imageSrc="https://github.com/shadcn.png"
+                imageSrc={avatarImg}
                 name="Abhi Ram Reddy"
                 username="abhiram"
                 description="Frontend Developer & UI/UX Enthusiast"

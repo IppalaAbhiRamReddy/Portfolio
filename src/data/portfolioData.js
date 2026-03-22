@@ -1,6 +1,28 @@
 import { Home, User, Code, Briefcase, Mail } from "lucide-react";
 import avatarImg from "../assets/Portfolio.png";
 
+// Local Tech Stack SVGs
+import htmlIcon from "../assets/icons/html.svg";
+import cssIcon from "../assets/icons/css.svg";
+import jsIcon from "../assets/icons/js.svg";
+import pythonIcon from "../assets/icons/python.svg";
+import javaIcon from "../assets/icons/java.svg";
+import reactIcon from "../assets/icons/react.svg";
+import tailwindIcon from "../assets/icons/tailwind.svg";
+import figmaIcon from "../assets/icons/figma.svg";
+import djangoIcon from "../assets/icons/django.svg";
+import fastapiIcon from "../assets/icons/fastapi.svg";
+import postgresIcon from "../assets/icons/postgres.svg";
+import mysqlIcon from "../assets/icons/mysql.svg";
+import firebaseIcon from "../assets/icons/firebase.svg";
+import supabaseIcon from "../assets/icons/supabase.svg";
+import gitIcon from "../assets/icons/git.svg";
+import githubIcon from "../assets/icons/github.svg";
+import postmanIcon from "../assets/icons/postman.svg";
+import vercelIcon from "../assets/icons/vercel.svg";
+import renderIcon from "../assets/icons/render.svg";
+import placeholderImg from "../assets/placeholder.svg";
+
 const portfolioData = {
   name: "Abhiram Reddy",
   role: "Full Stack Developer",
@@ -14,38 +36,35 @@ const portfolioData = {
   ],
   skills: {
     languages: [
-      { name: "Python", icon: "https://skillicons.dev/icons?i=py" },
-      { name: "Java", icon: "https://skillicons.dev/icons?i=java" },
-      { name: "JavaScript", icon: "https://skillicons.dev/icons?i=js" },
-      { name: "HTML", icon: "https://skillicons.dev/icons?i=html" },
-      { name: "CSS", icon: "https://skillicons.dev/icons?i=css" },
+      { name: "Python", icon: pythonIcon },
+      { name: "Java", icon: javaIcon },
+      { name: "JavaScript", icon: jsIcon },
+      { name: "HTML", icon: htmlIcon },
+      { name: "CSS", icon: cssIcon },
     ],
     frontend: [
-      { name: "React", icon: "https://skillicons.dev/icons?i=react" },
-      { name: "Tailwind CSS", icon: "https://skillicons.dev/icons?i=tailwind" },
-      { name: "Responsive UI", icon: "https://skillicons.dev/icons?i=figma" },
+      { name: "React", icon: reactIcon },
+      { name: "Tailwind CSS", icon: tailwindIcon },
+      { name: "Responsive UI", icon: figmaIcon },
     ],
     backend: [
-      { name: "Django", icon: "https://skillicons.dev/icons?i=django" },
-      { name: "REST APIs", icon: "https://skillicons.dev/icons?i=postman" },
-      {
-        name: "Authentication",
-        icon: "https://skillicons.dev/icons?i=supabase",
-      },
-      { name: "FastAPI", icon: "https://skillicons.dev/icons?i=fastapi" },
+      { name: "Django", icon: djangoIcon },
+      { name: "REST APIs", icon: postmanIcon },
+      { name: "Authentication", icon: supabaseIcon },
+      { name: "FastAPI", icon: fastapiIcon },
     ],
     databases: [
-      { name: "PostgreSQL", icon: "https://skillicons.dev/icons?i=postgres" },
-      { name: "MySQL", icon: "https://skillicons.dev/icons?i=mysql" },
-      { name: "Firebase", icon: "https://skillicons.dev/icons?i=firebase" },
-      { name: "Supabase", icon: "https://skillicons.dev/icons?i=supabase" },
+      { name: "PostgreSQL", icon: postgresIcon },
+      { name: "MySQL", icon: mysqlIcon },
+      { name: "Firebase", icon: firebaseIcon },
+      { name: "Supabase", icon: supabaseIcon },
     ],
     tools: [
-      { name: "Git", icon: "https://skillicons.dev/icons?i=git" },
-      { name: "GitHub", icon: "https://skillicons.dev/icons?i=github" },
-      { name: "Postman", icon: "https://skillicons.dev/icons?i=postman" },
-      { name: "Vercel", icon: "https://skillicons.dev/icons?i=vercel" },
-      { name: "Render", icon: "https://skillicons.dev/icons?i=render" },
+      { name: "Git", icon: gitIcon },
+      { name: "GitHub", icon: githubIcon },
+      { name: "Postman", icon: postmanIcon },
+      { name: "Vercel", icon: vercelIcon },
+      { name: "Render", icon: renderIcon },
     ],
   },
   projects: [
@@ -62,8 +81,7 @@ const portfolioData = {
       github: "#",
       live: "#",
       year: "2024",
-      image:
-        "https://plus.unsplash.com/premium_photo-1723489242223-865b4a8cf7b8?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0",
+      image: placeholderImg,
     },
     {
       title: "Task Manager",
@@ -77,8 +95,7 @@ const portfolioData = {
       github: "#",
       live: "#",
       year: "2024",
-      image:
-        "https://images.unsplash.com/photo-1530435460869-d13625c69bbf?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D$0",
+      image: placeholderImg,
     },
     {
       title: "AI Recommendation System",
@@ -93,8 +110,7 @@ const portfolioData = {
       github: "#",
       live: "#",
       year: "2023",
-      image:
-        "https://i.pinimg.com/1200x/99/ca/5c/99ca5cf82cf12df8801f7b2bef38d325.jpg",
+      image: placeholderImg,
     },
   ],
   contact: {
