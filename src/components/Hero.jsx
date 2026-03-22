@@ -224,7 +224,7 @@ const AnimatedHeroText = ({ socialLinks }) => {
               height: '1.05em',
               alignItems: 'flex-end',
               position: 'relative',
-              minWidth: '520px',
+              minWidth: 'min(520px, 80vw)',
             }}
           >
             {titles.map((title, i) => (

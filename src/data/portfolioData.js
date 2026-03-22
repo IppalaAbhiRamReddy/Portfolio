@@ -4,6 +4,7 @@ import vvitImg from "../assets/vvit.png";
 import placeholderImg from "../assets/placeholder.svg";
 import hobbiesImg from "../assets/hobbies.jpeg";
 import problemImg from "../assets/problem_solving.png";
+import achievementsImg from "../assets/achievements.png";
 
 // Local Tech Stack SVGs
 import htmlIcon from "../assets/icons/html.svg";
@@ -79,7 +80,7 @@ const portfolioData = {
       features: [
         "Architected a responsive, dark-themed UI with glassmorphism components",
         "Implemented smooth scroll animations and dynamic cursor interactions",
-        "Engineered a centralized config system for zero-friction content updates"
+        "Engineered a centralized config system for zero-friction content updates",
       ],
       github: "#",
       live: "#",
@@ -93,7 +94,7 @@ const portfolioData = {
       features: [
         "Built a real-time drag-and-drop Kanban board interface",
         "Engineered secure JWT-based user authentication and session handling",
-        "Designed flexible REST API endpoints for seamless crud operations"
+        "Designed flexible REST API endpoints for seamless crud operations",
       ],
       github: "#",
       live: "#",
@@ -108,7 +109,7 @@ const portfolioData = {
       features: [
         "Trained customized Machine Learning models on large user datasets",
         "Deployed a high-performance Python FastAPI backend architecture",
-        "Built an interactive dashboard for visualizing recommendation metrics"
+        "Built an interactive dashboard for visualizing recommendation metrics",
       ],
       github: "#",
       live: "#",
@@ -121,14 +122,15 @@ const portfolioData = {
     linkedin: "https://www.linkedin.com/in/ippala-abhiram-reddy/",
     github: "https://github.com/IppalaAbhiRamReddy",
     leetcode: "https://leetcode.com/u/Abhiram_Reddy_Ippala/",
-    resume: "https://drive.google.com/file/d/1k5MvGoPNr6UJYSd3waCoSXCFtSMv2686/view?usp=sharing",
+    resume:
+      "https://drive.google.com/file/d/1k5MvGoPNr6UJYSd3waCoSXCFtSMv2686/view?usp=sharing",
   },
   testimonials: [
     {
       points: [
         "B.Tech in CSE (AI & ML) @ VVIT, Guntur",
         "Academic standing: 8.5 CGPA",
-        "Focus: Backend development, Data Structures, and ML fundamentals"
+        "Focus: Backend development, Data Structures, and ML fundamentals",
       ],
       name: "Education",
       designation: "VVIT, Guntur | 2021 - 2025",
@@ -138,7 +140,7 @@ const portfolioData = {
       points: [
         "Solved 290+ problems on LeetCode",
         "Expertise: Arrays, Sliding Window, Binary Search, Trees, Graphs",
-        "Focus on Big-O optimization and regular contest participation"
+        "Focus on Big-O optimization and regular contest participation",
       ],
       name: "Problem Solving",
       designation: "LeetCode Specialist",
@@ -149,23 +151,23 @@ const portfolioData = {
         "⭐ 5★ SQL Badge on HackerRank",
         "🏆 NPTEL Elite Certifications (IIT Madras, Kharagpur, Kanpur)",
         "💻 Built multiple full-stack and AI-based applications",
-        "📈 Strong backend + database optimization skills"
+        "📈 Strong backend + database optimization skills",
       ],
       name: "Achievements",
       designation: "Certified Developer",
-      src: placeholderImg,
+      src: achievementsImg,
     },
     {
       points: [
         "Solving coding challenges and exploring new patterns",
         "Building side projects and experimenting with new technologies",
         "Learning about AI tools and backend system design",
-        "Staying updated with tech trends and developer tools"
+        "Staying updated with tech trends and developer tools",
       ],
       name: "Hobbies & Interests",
       designation: "Lifelong Learner",
       src: hobbiesImg,
-    }
+    },
   ],
 };
 

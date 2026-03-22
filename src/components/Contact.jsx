@@ -208,9 +208,9 @@ const Contact = () => {
             >
               <AvatarHoverCard
                 imageSrc={avatarImg}
-                name="Abhi Ram Reddy"
-                username="abhiram"
-                description="Frontend Developer & UI/UX Enthusiast"
+                name="Abhiram Reddy"
+                username="abhiram@1308"
+                description="Backend-Focused Developer & System Builder"
                 buttonContent={
                   <button
                     onClick={() => window.open('mailto:abhiramreddyippala@gmail.com')}
