@@ -92,7 +92,7 @@ export function ProjectShowcase() {
     <section
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative w-full max-w-4xl mx-auto px-6 py-16"
+      className="relative w-full max-w-4xl mx-auto px-4 md:px-6 py-12 md:py-16"
     >
       <div className="mb-12 flex justify-center w-full">
         <ShimmerText className="text-white text-2xl md:text-4xl font-extrabold tracking-wider uppercase text-center filter drop-shadow-md">
@@ -101,7 +101,7 @@ export function ProjectShowcase() {
       </div>
 
       <div
-        className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl"
+        className="pointer-events-none fixed z-50 overflow-hidden rounded-xl shadow-2xl hidden md:block"
         style={{
           left: containerRef.current?.getBoundingClientRect().left ?? 0,
           top: containerRef.current?.getBoundingClientRect().top ?? 0,
@@ -131,7 +131,7 @@ export function ProjectShowcase() {
       </div>
 
       <div
-        className="space-y-0 max-h-[80vh] overflow-y-auto pr-4 
+        className="space-y-0 max-h-none md:max-h-[80vh] overflow-y-visible md:overflow-y-auto pr-0 md:pr-4 
         [&::-webkit-scrollbar]:w-2 
         [&::-webkit-scrollbar-track]:bg-transparent 
         [&::-webkit-scrollbar-thumb]:bg-white/10 
@@ -191,7 +191,7 @@ export function ProjectShowcase() {
 
                   <p
                     className={`
-                      text-white/50 text-base mt-2 leading-relaxed max-w-xl
+                      text-white/50 text-sm md:text-base mt-2 leading-relaxed max-w-xl
                       transition-all duration-300 ease-out
                       ${hoveredIndex === index ? "text-white/80" : "text-white/50"}
                     `}

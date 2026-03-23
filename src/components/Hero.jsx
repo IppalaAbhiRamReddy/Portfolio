@@ -152,7 +152,7 @@ const TextArcLogo = ({ logoSrc, name }) => {
   const [diameter, setDiameter] = useState(340);
 
   useEffect(() => {
-    const fn = () => setDiameter(window.innerWidth < 768 ? 260 : 340);
+    const fn = () => setDiameter(window.innerWidth < 768 ? 240 : 340);
     fn();
     window.addEventListener("resize", fn);
     return () => window.removeEventListener("resize", fn);
@@ -198,8 +198,8 @@ const AnimatedHeroText = ({ socialLinks }) => {
   }, [index]);
 
   return (
-    <div className="flex flex-col gap-6 w-full">
-      <h1 className="flex flex-col text-[72px] md:text-[90px] lg:text-[105px] font-bold tracking-[-4px] leading-[0.95]">
+    <div className="flex flex-col gap-4 md:gap-6 w-full">
+      <h1 className="flex flex-col text-[10vw] md:text-[80px] lg:text-[105px] font-bold tracking-tight md:tracking-[-4px] leading-[0.95]">
         <span>Engineering</span>
 
         <span className="flex items-end gap-5">
@@ -212,7 +212,7 @@ const AnimatedHeroText = ({ socialLinks }) => {
               height: "1.05em",
               alignItems: "flex-end",
               position: "relative",
-              minWidth: "min(520px, 80vw)",
+              minWidth: "min(520px, 60vw)",
             }}
           >
             {titles.map((title, i) => (
@@ -321,12 +321,12 @@ const Hero = () => {
       id="hero"
       className="relative w-full px-8 md:px-14 lg:px-24 py-20 min-h-[90vh] flex items-center"
     >
-      <div className="flex flex-col md:flex-row items-center w-full gap-12">
-        <div className="flex-1 min-w-0">
+      <div className="flex flex-col md:flex-row items-center w-full gap-16 md:gap-12">
+        <div className="flex-1 min-w-0 text-center md:text-left">
           <AnimatedHeroText socialLinks={socialLinks} />
         </div>
 
-        <div className="flex-shrink-0 md:ml-auto md:-translate-y-12">
+        <div className="flex-shrink-0 md:ml-auto md:-translate-y-12 scale-90 md:scale-100">
           <TextArcLogo
             logoSrc={portfolioData.avatarUrl}
             name={portfolioData.name}

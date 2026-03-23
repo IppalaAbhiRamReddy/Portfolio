@@ -132,7 +132,7 @@ function AvatarHoverCard({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-0 left-0 rounded-xl shadow-lg overflow-hidden z-10 p-2 w-[26rem] bg-background border border-border"
+            className="absolute top-0 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 rounded-xl shadow-lg overflow-hidden z-10 p-2 w-[calc(100vw-2rem)] md:w-[26rem] bg-background border border-border"
             style={{ pointerEvents: "auto" }}
           >
             <div className="flex items-start gap-4">
@@ -199,7 +199,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative pt-20 pb-8 flex flex-col items-center justify-center w-full px-4 md:px-14 lg:px-24 overflow-hidden bg-background gap-8 md:gap-12"
+      className="relative pt-20 pb-16 md:pb-8 flex flex-col items-center justify-center w-full px-4 md:px-14 lg:px-24 overflow-hidden bg-background gap-8 md:gap-12"
     >
       {/* CENTERED: Animation Bubble Area */}
       <div
@@ -213,7 +213,7 @@ const Contact = () => {
         <div className="relative z-10 flex flex-col items-center">
           <div className="relative inline-block mt-16">
             <div
-              className="absolute -top-98 -left-6 md:-top-42 md:-left-0 z-50 cursor-pointer pointer-events-auto"
+              className="absolute -top-[160%] left-1/2 -translate-x-1/2 md:-top-42 md:left-0 md:translate-x-0 z-50 cursor-pointer pointer-events-auto"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
@@ -236,7 +236,7 @@ const Contact = () => {
               />
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold select-none text-white tracking-widest uppercase relative z-10 whitespace-nowrap">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold select-none text-white tracking-[0.15em] md:tracking-widest uppercase relative z-10 whitespace-nowrap text-center">
               Let's Connect
             </h1>
           </div>

@@ -66,13 +66,13 @@ const ExpandableTabs = ({
             onClick={() => onChange?.(index)}
             transition={transition}
             className={cn(
-              "relative flex items-center rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-300 cursor-pointer",
+              "relative flex items-center rounded-xl px-2.5 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium transition-colors duration-300 cursor-pointer",
               isActive
                 ? cn("bg-white/10", activeColor)
                 : "text-white/60 hover:bg-white/5 hover:text-white",
             )}
           >
-            <Icon size={20} />
+            <Icon className="w-4 h-4 md:w-5 md:h-5" />
             <AnimatePresence initial={false}>
               {isExpanded && (
                 <Motion.span
@@ -81,7 +81,7 @@ const ExpandableTabs = ({
                   animate="animate"
                   exit="exit"
                   transition={transition}
-                  className="overflow-hidden whitespace-nowrap cursor-pointer"
+                  className="overflow-hidden whitespace-nowrap cursor-pointer ml-1.5 md:ml-2"
                 >
                   {tab.title}
                 </Motion.span>
@@ -96,11 +96,12 @@ const ExpandableTabs = ({
 
 const Navbar = ({ activeTab, onChange }) => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4">
+    <header className="fixed top-2 md:top-4 left-0 right-0 z-50 flex justify-center px-4">
       <Motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full max-w-fit"
       >
         <ExpandableTabs
           tabs={portfolioData.navTabs}

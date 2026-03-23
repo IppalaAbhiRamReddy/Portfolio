@@ -41,14 +41,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen py-24 flex flex-col items-center px-4 md:px-24"
+      className="min-h-screen py-20 md:py-24 flex flex-col items-center px-4 md:px-14 lg:px-24"
     >
-      <div className="text-center w-full max-w-4xl mx-auto space-y-6 pt-10">
+      <div className="text-center w-full max-w-4xl mx-auto space-y-4 md:space-y-6 pt-10">
         <div className="flex flex-col items-center justify-center w-full">
-          <ShimmerText className="text-white text-2xl md:text-4xl font-bold tracking-wide leading-none filter drop-shadow-md text-center mb-1 md:mb-2">
+          <ShimmerText className="text-white text-xl md:text-4xl font-bold tracking-wide leading-tight md:leading-none filter drop-shadow-md text-center mb-1 md:mb-2">
             Driven by curiosity
           </ShimmerText>
-          <ShimmerText className="text-white/40 text-2xl md:text-4xl font-bold tracking-wide leading-none filter drop-shadow-md text-center">
+          <ShimmerText className="text-white/40 text-xl md:text-4xl font-bold tracking-wide leading-tight md:leading-none filter drop-shadow-md text-center">
             Fueled by code
           </ShimmerText>
         </div>

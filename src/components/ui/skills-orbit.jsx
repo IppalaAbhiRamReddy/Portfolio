@@ -43,18 +43,18 @@ export function SkillsOrbit({ skillsData }) {
   const getResponsiveValues = () => {
     switch (screenSize) {
       case "xs":
-        return { containerRadius: 90, profileSize: 45, cardWidth: "w-32" };
+        return { containerRadius: 80, profileSize: 40, cardWidth: "w-28" };
       case "sm":
-        return { containerRadius: 110, profileSize: 55, cardWidth: "w-36" };
+        return { containerRadius: 100, profileSize: 50, cardWidth: "w-32" };
       case "md":
-        return { containerRadius: 140, profileSize: 65, cardWidth: "w-44" };
+        return { containerRadius: 130, profileSize: 60, cardWidth: "w-40" };
       default:
         return { containerRadius: 180, profileSize: 80, cardWidth: "w-56" };
     }
   };
 
   const { containerRadius, profileSize, cardWidth } = getResponsiveValues();
-  const containerSize = containerRadius * 2 + 100;
+  const containerSize = containerRadius * 2 + (screenSize === "xs" ? 60 : 100);
 
   const [rotationOffset, setRotationOffset] = useState(0);
 
@@ -214,9 +214,8 @@ export function SkillsOrbit({ skillsData }) {
               setActiveCatIndex(index);
               setRotationOffset(0);
             }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === activeCatIndex ? "bg-blue-500 w-6" : "bg-white/20"
-            }`}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeCatIndex ? "bg-blue-500 w-6" : "bg-white/20"
+              }`}
           />
         ))}
       </div>
