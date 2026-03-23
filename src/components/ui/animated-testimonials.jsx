@@ -44,7 +44,7 @@ export const AnimatedTestimonials = ({
         className,
       )}
     >
-      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>

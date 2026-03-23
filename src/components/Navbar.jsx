@@ -96,7 +96,7 @@ const ExpandableTabs = ({
 
 const Navbar = ({ activeTab, onChange }) => {
   return (
-    <header className="fixed top-2 md:top-4 left-0 right-0 z-50 flex justify-center px-4">
+    <header className="fixed top-2 md:top-4 left-0 right-0 z-[100] flex justify-center px-4">
       <Motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

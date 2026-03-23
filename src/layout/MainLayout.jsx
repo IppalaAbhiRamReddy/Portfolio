@@ -77,7 +77,7 @@ const MainLayout = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-neutral-950 text-white overflow-hidden">
+    <div className="relative min-h-screen bg-neutral-950 text-white overflow-x-hidden">
       <StarsBackground />
 
       <div className="relative z-10 scroll-smooth">

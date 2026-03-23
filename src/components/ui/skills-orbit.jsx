@@ -43,18 +43,18 @@ export function SkillsOrbit({ skillsData }) {
   const getResponsiveValues = () => {
     switch (screenSize) {
       case "xs":
-        return { containerRadius: 80, profileSize: 40, cardWidth: "w-28" };
+        return { containerRadius: 105, profileSize: 32, cardWidth: "w-28" };
       case "sm":
-        return { containerRadius: 100, profileSize: 50, cardWidth: "w-32" };
+        return { containerRadius: 115, profileSize: 40, cardWidth: "w-32" };
       case "md":
-        return { containerRadius: 130, profileSize: 60, cardWidth: "w-40" };
+        return { containerRadius: 140, profileSize: 60, cardWidth: "w-40" };
       default:
         return { containerRadius: 180, profileSize: 80, cardWidth: "w-56" };
     }
   };
 
   const { containerRadius, profileSize, cardWidth } = getResponsiveValues();
-  const containerSize = containerRadius * 2 + (screenSize === "xs" ? 60 : 100);
+  const containerSize = containerRadius * 2 + (screenSize === "xs" || screenSize === "sm" ? 40 : 100);
 
   const [rotationOffset, setRotationOffset] = useState(0);
 
@@ -93,7 +93,7 @@ export function SkillsOrbit({ skillsData }) {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
             className={cn(
-              "z-20 bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-full aspect-square flex items-center justify-center p-6 text-center",
+              "z-20 bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl rounded-3xl md:rounded-full flex items-center justify-center p-4 md:p-6 text-center",
               cardWidth,
             )}
           >
@@ -137,15 +137,15 @@ export function SkillsOrbit({ skillsData }) {
               <div className="flex justify-center items-center mt-6 space-x-4">
                 <button
                   onClick={prev}
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors cursor-pointer"
+                  className="p-1.5 md:p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors cursor-pointer"
                 >
-                  <ChevronLeft size={18} className="text-white/70" />
+                  <ChevronLeft size={16} className="text-white/70" />
                 </button>
                 <button
                   onClick={next}
-                  className="p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors cursor-pointer"
+                  className="p-1.5 md:p-2 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-colors cursor-pointer"
                 >
-                  <ChevronRight size={18} className="text-white/70" />
+                  <ChevronRight size={16} className="text-white/70" />
                 </button>
               </div>
             </div>

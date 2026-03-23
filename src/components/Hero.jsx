@@ -199,7 +199,7 @@ const AnimatedHeroText = ({ socialLinks }) => {
 
   return (
     <div className="flex flex-col gap-4 md:gap-6 w-full">
-      <h1 className="flex flex-col text-[10vw] md:text-[80px] lg:text-[105px] font-bold tracking-tight md:tracking-[-4px] leading-[0.95]">
+      <h1 className="flex flex-col text-[10vw] md:text-[80px] lg:text-[105px] font-bold tracking-tight md:tracking-[-4px] leading-[1.1] md:leading-[0.95]">
         <span>Engineering</span>
 
         <span className="flex items-end gap-5">
@@ -212,7 +212,7 @@ const AnimatedHeroText = ({ socialLinks }) => {
               height: "1.05em",
               alignItems: "flex-end",
               position: "relative",
-              minWidth: "min(520px, 60vw)",
+              minWidth: "min(400px, 100%)",
             }}
           >
             {titles.map((title, i) => (
@@ -319,7 +319,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative w-full px-8 md:px-14 lg:px-24 py-20 min-h-[90vh] flex items-center"
+      className="relative w-full px-6 md:px-14 lg:px-24 pt-20 pb-12 md:py-20 min-h-[85vh] md:min-h-[90vh] flex items-center"
     >
       <div className="flex flex-col md:flex-row items-center w-full gap-16 md:gap-12">
         <div className="flex-1 min-w-0 text-center md:text-left">

@@ -6,7 +6,7 @@ const StackingNavbar = ({ items = [] }) => {
 
   return (
     <div
-      className="flex items-center gap-x-2"
+      className="flex flex-wrap items-center gap-2 md:gap-x-2"
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
     >
@@ -30,8 +30,10 @@ const StackingNavbar = ({ items = [] }) => {
 const StackingNavbarItem = ({ href, children, style, expanded, index }) => {
   return (
     <motion.div
-      initial={{ x: -100 * index }}
-      animate={{ x: expanded ? 0 : -100 * index }}
+      initial={{ x: 0 }}
+      animate={{
+        x: typeof window !== "undefined" && window.innerWidth < 768 ? 0 : (expanded ? 0 : -100 * index)
+      }}
       transition={{
         duration: 0.6,
         ease: "circInOut",
@@ -39,9 +41,10 @@ const StackingNavbarItem = ({ href, children, style, expanded, index }) => {
         type: "spring",
       }}
       style={{ zIndex: 100 - index }}
+      className="md:relative"
     >
       <a
-        className="flex items-center text-sm px-5 py-3 rounded-3xl bg-white/5 border border-white/10 text-white backdrop-blur-lg hover:bg-white/20 hover:border-white/30 transition-colors duration-300 ease-in-out no-underline whitespace-nowrap"
+        className="flex items-center text-xs md:text-sm px-4 py-2 md:px-5 md:py-3 rounded-full md:rounded-3xl bg-white/5 border border-white/10 text-white backdrop-blur-lg hover:bg-white/20 hover:border-white/30 transition-colors duration-300 ease-in-out no-underline whitespace-nowrap"
         href={href}
         style={style}
         target={href.startsWith("http") ? "_blank" : undefined}
